@@ -51,9 +51,9 @@ public class Main
 
     Exchange exchange = new Exchange();
     exchange.rates(BaseCurrency);
+    System.out.println(BaseCurrency);
   }
   /***** STATIC METHODS *****/
-  public static void covert(int c)
   {
 
   }
