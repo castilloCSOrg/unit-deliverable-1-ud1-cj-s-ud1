@@ -50,8 +50,8 @@ public class Main
     String ConvertedCurrency=ToConvert.nextLine().toUpperCase();
 
     Exchange exchange = new Exchange();
-    exchange.rates(BaseCurrency);
-    System.out.println(BaseCurrency);
+    double rates=exchange.rates(BaseCurrency);
+    System.out.println(rates);
   }
   /***** STATIC METHODS *****/
   {
