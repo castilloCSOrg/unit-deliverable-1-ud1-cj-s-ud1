@@ -37,21 +37,19 @@ public class Main
     System.out.println("Enter currencies current type");
 
     String BaseCurrency = Base.nextLine().toUpperCase();
-    if (BaseCurrency.length()==3) {
-      System.out.println("Currency is in "+BaseCurrency);
-    } else {
-      System.out.println("Please use the ISO-4217 to denote the currency as "+BaseCurrency+" is not a valid input");
-      System.exit(0);
-    }
+    checkvalid(BaseCurrency);
 
     Scanner ToConvert = new Scanner(System.in);
     System.out.println("Please enter the currency you would like to convert to");
 
     String ConvertedCurrency=ToConvert.nextLine().toUpperCase();
+    checkvalid(ConvertedCurrency);
 
     Exchange exchange = new Exchange();
-    double rates=exchange.rates(BaseCurrency);
-    System.out.println(rates);
+    double rate1=exchange.rates(BaseCurrency);
+    double rate2=exchange.rates(ConvertedCurrency);
+
+    System.out.println(rate1);
   }
   /***** STATIC METHODS *****/
   {
@@ -60,5 +58,22 @@ public class Main
   public static void currencytype(String ConvertedCurrency)
   {
 
+  }
+  public static void checkvalid(String CurrencyType)
+  {
+    if (CurrencyType.length()==3) {
+      Exchange exchange = new Exchange();
+      double rate=exchange.rates(CurrencyType);
+      if (rate!=0.0){
+        System.out.println(rate);
+      if (rate==0.0){
+        System.out.println("Not a valid currency type, try again");
+      }
+      } 
+    }
+     else {
+      System.out.println("Please use the ISO-4217 to denote the currency as "+CurrencyType+" is not a valid input");
+      System.exit(0);
+          }
   }
 }

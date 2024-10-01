@@ -317,8 +317,7 @@ public double rates(String currency)
     else if(currency.equals("ZWL"))
         return(35206.32);
     else
-        System.out.println("Currency not recognized");
-    return(0);
+        return(0);
    }
 }
     
