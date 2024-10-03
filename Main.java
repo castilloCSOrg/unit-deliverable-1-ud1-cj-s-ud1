@@ -23,33 +23,39 @@ public class Main
 
   public static void main(String[] args)
   {
-    /***** DECLARATION SECTION *****/
-
-    /***** INITIALIZATION SECTION *****/
-
-    /***** INTRO SECTION *****/
-
-    /***** PROCESSING SECTION *****/
-
     /***** OUTPUT SECTION *****/
-    
+    //Professor approved of scanner use in UD1
+    //Scanner to learn the base currency
     Scanner Base = new Scanner(System.in);
     System.out.println("Enter currencies current type");
-
+    //Saves the scanner output and uppercases it
     String BaseCurrency = Base.nextLine().toUpperCase();
+    //Checks if the inputed currency type is a valid one and if it isn't it exits the program
     checkvalid(BaseCurrency);
-
+    //Scanner to learn the currency it is to be converted to
     Scanner ToConvert = new Scanner(System.in);
     System.out.println("Please enter the currency you would like to convert to");
-
+    //Saves the scanner output and uppercases it
     String ConvertedCurrency=ToConvert.nextLine().toUpperCase();
+    //Checks if the inputed currency type is a valid one and if it isn't it exits the program
     checkvalid(ConvertedCurrency);
-
+    //Scanner to learn how much currency to be converted
+    Scanner MonetaryAmount = new Scanner(System.in);
+    System.out.println("Please enter a whole number of the amount of money to convert");
+    String Money=MonetaryAmount.nextLine();
+    try {
+      int cash=Integer.parseInt(Money);
+    } catch(Exception e){
+      System.out.println("Please enter a integer");
+    }
+      System.out.println(cash);
+    //Allowing the Exchange.java to be utilized in Main
     Exchange exchange = new Exchange();
+    //Determining what the exchange rates are
     double rate1=exchange.rates(BaseCurrency);
     double rate2=exchange.rates(ConvertedCurrency);
+    //Changing t
 
-    System.out.println(rate1);
   }
   /***** STATIC METHODS *****/
   {
@@ -65,15 +71,13 @@ public class Main
       Exchange exchange = new Exchange();
       double rate=exchange.rates(CurrencyType);
       if (rate!=0.0){
-        System.out.println(rate);
-      if (rate==0.0){
+      }
+      else {
         System.out.println("Not a valid currency type, try again");
+        System.exit(0);
       }
       } 
     }
-     else {
-      System.out.println("Please use the ISO-4217 to denote the currency as "+CurrencyType+" is not a valid input");
-      System.exit(0);
-          }
+      
   }
-}
+
