@@ -46,16 +46,20 @@ public class Main
     try {
       int cash=Integer.parseInt(Money);
     } catch(Exception e){
-      System.out.println("Please enter a integer");
+      System.out.println("A integer was not input, rerun the code and enter a integer");
+      System.exit(0);
     }
-      System.out.println(cash);
+    int cash=Integer.parseInt(Money);
+    System.out.println(cash);
     //Allowing the Exchange.java to be utilized in Main
     Exchange exchange = new Exchange();
     //Determining what the exchange rates are
     double rate1=exchange.rates(BaseCurrency);
     double rate2=exchange.rates(ConvertedCurrency);
-    //Changing t
-
+    //Doing the math for the exhange rates
+    //Making it into USD
+    double cash_exchanged= cash*rate1;
+    System.out.println(cash_exchanged);
   }
   /***** STATIC METHODS *****/
   {
