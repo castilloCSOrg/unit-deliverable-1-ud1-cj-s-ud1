@@ -2,6 +2,7 @@ public class Exchange {
    /**
  * @param currency
  */
+//All current currencies with an ISO 4217 code are listed below
 public double rates(String currency)
    {
     if(currency.equals("AED"))
@@ -317,6 +318,7 @@ public double rates(String currency)
     else if(currency.equals("ZWL"))
         return(35206.32);
     else
+    //If the code is not recognized it sets the exchange value to 0 letting the main program know it is not valid
         return(0);
    }
 }
