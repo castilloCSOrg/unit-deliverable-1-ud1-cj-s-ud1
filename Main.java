@@ -29,12 +29,13 @@ public class Main
       Scanner Loop=new Scanner(System.in); 
       System.out.println("Would you like to continue converting currency? (Y/N) ");
       Continue = Loop.nextLine().toUpperCase();
+    
+      while (! Continue.equals("N")){
+        Loop=new Scanner(System.in); 
+        System.out.println("Invalid input, please try again (Y/N) ");
+        Continue = Loop.nextLine().toUpperCase();
     }
-    if (! Continue.equals("N")){
-      Scanner Loop=new Scanner(System.in); 
-      System.out.println("Invalid input, please try again (Y/N) ");
-      Continue = Loop.nextLine().toUpperCase();
-    }
+    } 
     
     
   }
@@ -78,7 +79,6 @@ public class Main
       System.out.println("Enter currencies current type");
       Currency = C.nextLine().toUpperCase();
       rate=exchange.rates(Currency);
-      System.out.println(rate);
     }
     return Currency;
       
