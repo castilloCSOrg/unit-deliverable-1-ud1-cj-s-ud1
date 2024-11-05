@@ -29,13 +29,8 @@ public class Main
       Scanner Loop=new Scanner(System.in); 
       System.out.println("Would you like to continue converting currency? (Y/N) ");
       Continue = Loop.nextLine().toUpperCase();
-    
-      while (! Continue.equals("N")){
-        Loop=new Scanner(System.in); 
-        System.out.println("Invalid input, please try again (Y/N) ");
-        Continue = Loop.nextLine().toUpperCase();
     }
-    } 
+    
     
     
   }
