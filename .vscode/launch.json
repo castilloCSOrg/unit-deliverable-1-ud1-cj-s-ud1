@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Exchange",
+            "request": "launch",
+            "mainClass": "Exchange",
+            "projectName": "unit-deliverable-1-ud1-cj-s-ud1_e2135b9e"
+        },
+        {
+            "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Main"
